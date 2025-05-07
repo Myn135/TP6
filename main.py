@@ -215,7 +215,7 @@ class MyGame(arcade.View):
         elif self.comp_point == 3:
             self.game_state = GameState.GAME_OVER
 
-        if self.game_state == GameState.ROUND_ACTIVE and self.attack_choice is True:
+        if self.game_state == GameState.ROUND_ACTIVE and self.attack_choice:
             pc_attack = randint(0, 2)
             if pc_attack == 0:
                 self.computer_attack_type = AttackType.ROCK
@@ -233,7 +233,7 @@ class MyGame(arcade.View):
                     self.comp_sprites.append(self.comp_scissor)
                 self.game_state = GameState.ROUND_DONE
 
-        elif self.game_state == GameState.ROUND_DONE and self.attack_choice is True:
+        elif self.game_state == GameState.ROUND_DONE and self.attack_choice:
 
             if self.player_attack_type == AttackType.ROCK:
                 if self.computer_attack_type == AttackType.ROCK:
